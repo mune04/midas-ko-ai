@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイダス | KO×AI×就活</title>
+<style>
+  :root {
+    --gold: #b8934a;
+    --gold-dark: #8f6f34;
+    --black: #1a1a1a;
+    --gray: #666;
+    --line: #e5e2da;
+    --bg: #fdfcfa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    color: var(--black);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  header {
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(253,252,250,0.95);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .logo { font-weight: 700; font-size: 1.3em; letter-spacing: 0.08em; }
+  .logo span { color: var(--gold-dark); }
+  nav a {
+    margin-left: 28px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.92em;
+  }
+  .hero {
+    padding: 110px 6% 90px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow {
+    letter-spacing: 0.25em;
+    color: var(--gold-dark);
+    font-size: 0.8em;
+    font-weight: 700;
+  }
+  .hero h1 {
+    font-size: 2.4em;
+    margin: 18px 0 10px;
+    letter-spacing: 0.04em;
+  }
+  .hero p.sub {
+    color: var(--gray);
+    font-size: 1.05em;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 80px 6%;
+    max-width: 880px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 1.6em;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  h2 .num {
+    color: var(--gold-dark);
+    font-size: 0.6em;
+    display: block;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+  }
+  .lead {
+    color: var(--gray);
+    margin-bottom: 40px;
+  }
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .concept-card {
+    border: 1px solid var(--line);
+    padding: 28px;
+    border-radius: 4px;
+  }
+  .concept-card h3 {
+    font-size: 1.05em;
+    margin-top: 0;
+    color: var(--gold-dark);
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 36px 0;
+  }
+  .stat {
+    text-align: center;
+    border: 1px solid var(--line);
+    padding: 24px 10px;
+    border-radius: 4px;
+  }
+  .stat .n {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--gold-dark);
+  }
+  .stat .l { color: var(--gray); font-size: 0.85em; margin-top: 4px; }
+  blockquote {
+    border-left: 3px solid var(--gold);
+    margin: 32px 0;
+    padding: 4px 24px;
+    color: #444;
+    font-style: normal;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: var(--gray);
+    font-style: normal;
+  }
+  .network-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .network-wrap svg { width: 100%; max-width: 480px; height: auto; }
+  .node-circle {
+    fill: white;
+    stroke: var(--line);
+    stroke-width: 1.5;
+  }
+  .node-circle.center {
+    fill: var(--gold);
+    stroke: var(--gold-dark);
+  }
+  .node-label {
+    font-size: 15px;
+    fill: var(--black);
+    text-anchor: middle;
+    font-weight: 600;
+  }
+  .node-label.center { fill: white; }
+  .link-line { stroke: var(--line); stroke-width: 1.5; }
+  .spoke-line { stroke: var(--gold); stroke-width: 1; opacity: 0.55; }
+  ol.benefits {
+    padding-left: 1.2em;
+  }
+  ol.benefits li {
+    margin-bottom: 16px;
+  }
+  ol.benefits b { color: var(--gold-dark); }
+  .cta {
+    text-align: center;
+    padding: 90px 6%;
+  }
+  .cta h2 { margin-bottom: 16px; }
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 40px;
+    background: var(--black);
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+  }
+  footer {
+    text-align: center;
+    padding: 36px;
+    color: var(--gray);
+    font-size: 0.8em;
+  }
+  @media (max-width: 640px) {
+    .concept-grid, .stats { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MIDAS<span>.</span></div>
+  <nav>
+    <a href="#concept">コンセプト</a>
+    <a href="#results">実績</a>
+    <a href="#org">組織</a>
+    <a href="#join">入会案内</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">KO × AI × 就活</div>
+  <h1>一人の学びを、<br>みんなの武器に。</h1>
+  <p class="sub">マイダスは、慶應義塾大学生限定のAI活用コミュニティです。学び合いを通じて集合知をつくり、就職活動でも通用する実績と人脈を育てます。</p>
+</div>
+
+<section id="concept">
+  <h2><span class="num">CONCEPT</span>学び合いが、集合知になる。</h2>
+  <p class="lead">マイダスは「教える/教わる」の一方通行ではなく、それぞれの学びを持ち寄り、団体全体の知見に変えていくコミュニティです。</p>
+
+  <p style="margin-bottom:28px;">
+    きっかけは、身の回りでAIツールを使いこなせる人とそうでない人の差が広がっていることに気づいたことでした。この差は多くの場合、能力の差ではなく「最初の一歩を踏み出せたかどうか」の差に過ぎません。だからこそ、一人で抱え込んで学ぶよりも、学んだことをすぐ周りに共有した方が、コミュニティ全体の底上げが速い——そう考えて、友人向けの小さな講習会から活動を始めました。
+  </p>
+  <p style="margin-bottom:40px;">
+    学び合いを大切にするのには、もう一つ理由があります。AIモデルが多くの人に使われることで得たデータをもとに賢くなっていくように、人の学びもまた、共有され、使われるほど磨かれていきます。一人が得た知識を仲間に還元し、仲間がまた別の知見を持ち帰ってくる——この循環がコミュニティの中で回り続けることで、個人では辿り着けない「集合知」が生まれます。マイダスは、この学び合いの循環を、部門という仕組みの形にした場所です。
+  </p>
+
+  <div class="concept-grid">
+    <div class="concept-card">
+      <h3>集合知型の学び</h3>
+      <p>各メンバーが専門部門に所属し、学んだ知見を団体内に還元し合う仕組み。個人の学びが、そのままコミュニティ全体の資産になります。</p>
+    </div>
+    <div class="concept-card">
+      <h3>実績で語れる活動</h3>
+      <p>活動は感覚的な振り返りで終わらせず、参加人数・満足度などを記録し、外部の第三者からも評価されるレベルの実績として積み上げています。</p>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <h2><span class="num">RESULTS</span>実績</h2>
+  <p class="lead">Claude講習会からスタートし、回を重ねるごとに実績を記録・蓄積しています。</p>
+  <div class="stats">
+    <div class="stat"><div class="n">2+</div><div class="l">開催回数</div></div>
+    <div class="stat"><div class="n">6→</div><div class="l">初回参加人数</div></div>
+    <div class="stat"><div class="n">KO限定</div><div class="l">入会条件</div></div>
+  </div>
+  <blockquote>
+    「個人の学びに留めず、相乗効果による非線形的なゲイン拡大を企図した設計」
+    <cite>— 社会人の方からいただいた評価コメントより</cite>
+  </blockquote>
+</section>
+
+<section id="org">
+  <h2><span class="num">ORGANIZATION</span>組織構成</h2>
+  <p class="lead">上下関係のあるピラミッド型ではなく、各部門がフラットにつながり、発見や知見をお互いに共有し合うネットワーク型の組織です。中心にあるのは役職ではなく「集合知」そのもの。</p>
+  <div class="network-wrap">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- ring connections between neighboring nodes -->
+      <g class="link-line">
+        <line x1="250" y1="80"  x2="370.2" y2="129.8"/>
+        <line x1="370.2" y1="129.8" x2="420" y2="250"/>
+        <line x1="420" y1="250" x2="370.2" y2="370.2"/>
+        <line x1="370.2" y1="370.2" x2="250" y2="420"/>
+        <line x1="250" y1="420" x2="129.8" y2="370.2"/>
+        <line x1="129.8" y1="370.2" x2="80" y2="250"/>
+        <line x1="80" y1="250" x2="129.8" y2="129.8"/>
+        <line x1="129.8" y1="129.8" x2="250" y2="80"/>
+      </g>
+      <!-- spokes to center (知の共有を表す) -->
+      <g class="spoke-line">
+        <line x1="250" y1="250" x2="250" y2="80"/>
+        <line x1="250" y1="250" x2="370.2" y2="129.8"/>
+        <line x1="250" y1="250" x2="420" y2="250"/>
+        <line x1="250" y1="250" x2="370.2" y2="370.2"/>
+        <line x1="250" y1="250" x2="250" y2="420"/>
+        <line x1="250" y1="250" x2="129.8" y2="370.2"/>
+        <line x1="250" y1="250" x2="80" y2="250"/>
+        <line x1="250" y1="250" x2="129.8" y2="129.8"/>
+      </g>
+      <!-- center: 集合知 -->
+      <circle class="node-circle center" cx="250" cy="250" r="46"/>
+      <text class="node-label center" x="250" y="245">集合知</text>
+      <text class="node-label center" x="250" y="264" font-size="11">SHARED KNOWLEDGE</text>
+
+      <!-- outer nodes -->
+      <circle class="node-circle" cx="250" cy="80" r="50"/>
+      <text class="node-label" x="250" y="86">代表</text>
+
+      <circle class="node-circle" cx="370.2" cy="129.8" r="50"/>
+      <text class="node-label" x="370.2" y="135.8">ゲーム部門</text>
+
+      <circle class="node-circle" cx="420" cy="250" r="50"/>
+      <text class="node-label" x="420" y="256">開発部門</text>
+
+      <circle class="node-circle" cx="370.2" cy="370.2" r="50"/>
+      <text class="node-label" x="370.2" y="370.2">SNS運用</text>
+      <text class="node-label" x="370.2" y="388.2">部門</text>
+
+      <circle class="node-circle" cx="250" cy="420" r="50"/>
+      <text class="node-label" x="250" y="426">副代表</text>
+
+      <circle class="node-circle" cx="129.8" cy="370.2" r="50"/>
+      <text class="node-label" x="129.8" y="376.2">広報</text>
+
+      <circle class="node-circle" cx="80" cy="250" r="50"/>
+      <text class="node-label" x="80" y="256">会計</text>
+
+      <circle class="node-circle" cx="129.8" cy="129.8" r="50"/>
+      <text class="node-label" x="129.8" y="135.8">外務</text>
+    </svg>
+  </div>
+</section>
+
+<section id="join">
+  <h2><span class="num">JOIN US</span>入会のメリット</h2>
+  <ol class="benefits">
+    <li><b>AIについて学べる</b> — 実践的なAI活用講習会を継続的に開催しています。</li>
+    <li><b>意識の高い仲間とつながれる</b> — 同じ目線で学び合える慶應生限定のコミュニティです。</li>
+    <li><b>全員が名刺を作れる</b> — 就活での社会人との接点づくりに直結する、マイダスの一番の目玉です。</li>
+    <li><b>コミュニティ運営・イベント企画の経験が積める</b> — 部門活動を通じて、実務に近い経験を得られます。</li>
+  </ol>
+</section>
+
+<div class="cta">
+  <h2>マイダスに参加する</h2>
+  <p class="lead" style="margin-bottom:0;">慶應義塾大学生であれば誰でも参加できます。まずはお気軽にご連絡ください。</p>
+  <a class="btn" href="mailto:info@example.com">お問い合わせ</a>
+</div>
+
+<footer>
+  © 2026 マイダス(MIDAS) — KO×AI×就活
+</footer>
+
+</body>
+</html>
