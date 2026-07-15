@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プログラミング未経験の私が、AIで「思い出のゲーム」を少しだけ蘇らせた話 | マイダス</title>
+<style>
+  :root {
+    --gold: #b8934a;
+    --gold-dark: #8f6f34;
+    --black: #1a1a1a;
+    --gray: #666;
+    --line: #e5e2da;
+    --bg: #fdfcfa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    color: var(--black);
+    background: var(--bg);
+    line-height: 1.9;
+  }
+  header {
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(253,252,250,0.95);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .logo { font-weight: 700; font-size: 1.3em; letter-spacing: 0.08em; text-decoration: none; color: var(--black); }
+  .logo span { color: var(--gold-dark); }
+  nav a { margin-left: 20px; text-decoration: none; color: var(--gray); font-size: 0.9em; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px 6% 100px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--gold-dark);
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  .article-date { color: var(--gray); font-size: 0.85em; margin-bottom: 6px; }
+  .article-author { color: var(--gray); font-size: 0.9em; margin-bottom: 28px; font-weight: 700; }
+  h1 { font-size: 1.7em; line-height: 1.5; margin: 0 0 8px; letter-spacing: 0.02em; }
+  h2 { font-size: 1.2em; color: var(--gold-dark); margin: 40px 0 12px; }
+  p { margin: 0 0 20px; }
+  .credit-box {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .credit-box .credit-label { font-size: 0.8em; color: var(--gray); margin-bottom: 8px; }
+  .credit-box ul { margin: 0; padding-left: 1.2em; }
+  footer { text-align: center; padding: 36px; color: var(--gray); font-size: 0.8em; }
+  .shot {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    display: block;
+    margin: 8px 0 6px;
+  }
+  .shot-caption {
+    color: var(--gray);
+    font-size: 0.82em;
+    margin: 0 0 28px;
+  }
+  .shot-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 8px 0 6px;
+  }
+  .shot-row img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    display: block;
+  }
+  @media (max-width: 560px) {
+    .shot-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="../index.html">MIDAS<span>.</span></a>
+  <nav>
+    <a href="../index.html#results">実績一覧へ戻る</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back-link" href="../index.html#results">← 実績一覧へ戻る</a>
+  <div class="article-date">2026.07.15</div>
+  <h1>プログラミング未経験の私が、AIで「思い出のゲーム」を少しだけ蘇らせた話</h1>
+  <div class="article-author">マイダス副代表・坂本理樹</div>
+
+  <h2>サービス終了で消えたゲーム</h2>
+  <p>
+    かつて夢中になって遊んでいた、カードゲームとボードゲームの要素を掛け合わせたソーシャルゲームがありました。しかしそのゲームはサービスを終了し、「もう二度と遊べない」ものになってしまいました。
+  </p>
+  <p>
+    私はプログラミングの経験が全くありません。それでも、AIの活用を学ぶ団体を運営する中で、ひとつの考えが浮かびました。「AIなら、あのゲームを再現できるんじゃないか」。そう思い立ち、Claude Code というAIコーディングツールで再現に挑戦しました。
+  </p>
+
+  <h2>私の仕事は「伝えること」と「遊ぶこと」だけ</h2>
+  <p>
+    制作期間はおよそ2日間。コードはすべてAIが書き、私がやったのは3つだけです。
+  </p>
+  <p>
+    記憶の中にあるゲームのシステムを言葉で伝えること。「こんなカードがあったら面白かったはず」というオリジナルカードのアイデアを出すこと。そして、テストプレイをして「ここが動かない」とAIに伝えること。この繰り返しで、ゲームは形になっていきました。極端に言えば、コードの中で何が起きているのか、私には分かっていません。それでも、ゲームは動いたのです。
+  </p>
+  <p>
+    一番苦労したのは、AIへの指示の出し方です。頭の中のイメージを正確に言語化する作業は想像以上に難しく、試行錯誤の中で Claude Code の利用制限に何度も引っかかりました。それでも投げ出さなかったのは、それだけ好きなゲームだったからです。
+  </p>
+
+  <img class="shot" src="../attachments/sakamoto_game/game_board.png" alt="再現したゲームの対戦画面。六角マスの盤面で自分と相手のミニオンが向かい合っている">
+  <p class="shot-caption">実際に動いている対戦画面。六角マスの盤面上でミニオン同士がぶつかり合う。</p>
+
+  <div class="shot-row">
+    <div>
+      <img src="../attachments/sakamoto_game/card_takedragon.png" alt="「タケドラゴン」のカード。分身能力を持つコスト5のミニオン">
+      <p class="shot-caption">オリジナルカードのひとつ「タケドラゴン」。登場時に分身を出す能力を実装した。</p>
+    </div>
+    <div>
+      <img src="../attachments/sakamoto_game/dev_tools.jpg" alt="開発者ツールパネル。カードを手札に追加したりターンを終了したりできる">
+      <p class="shot-caption">動作確認用に用意した開発者ツール。カードを手札に追加してテストプレイを繰り返した。</p>
+    </div>
+  </div>
+
+  <h2>完成度は3分の1。それでも、確かに動いた</h2>
+  <p>
+    正直に言えば、完成度は本家の3分の1程度です。オンライン対戦はできませんし、再現しきれていない要素もたくさんあります。
+  </p>
+  <p>
+    それでも、システムの核となる部分は動き、CPU対戦もできるようになりました。もう遊べないはずだったゲームに一部でも自分の手で触れ直せたこと、そして思い描いていたオリジナルカードを実際に動く形で実装できたこと。それだけで、挑戦した価値は十分にありました。
+  </p>
+  <p>
+    なお、元となった作品の権利に配慮してゲームは公開せず、身近な友人やマイダスのメンバーに遊んでもらうにとどめています。
+  </p>
+
+  <h2>「好き」があれば行動できる時代</h2>
+  <p>
+    この経験で実感したのは、AIの時代に問われるのは技術力そのものではなく、「何がしたいか」と「それをどう伝えるか」だということです。未経験の私でも、「好き」という気持ちとアイデアさえあれば、2日間で遊べるゲームを形にできました。完璧には程遠くても、「やりたい」を「やってみた」に変えられたこと自体が、数年前なら考えられなかったことです。
+  </p>
+  <p>
+    マイダスは「一人の学びを、みんなの武器に」を掲げる団体です。今回の挑戦もメンバーに共有し、団体の知見にしています。誰かの「やってみた」が、次の誰かの「やってみよう」につながる。そんな循環を、これからも作っていきたいと考えています。
+  </p>
+
+  <div class="credit-box">
+    <div class="credit-label">担当: 個人プロジェクト</div>
+    <ul>
+      <li>坂本理樹(副代表) — 企画・言語化・テストプレイ・記事執筆</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  © 2026 マイダス(MIDAS) — KO×AI×就活
+</footer>
+
+</body>
+</html>
