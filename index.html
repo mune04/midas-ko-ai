@@ -126,6 +126,52 @@
     color: #444;
     font-style: normal;
   }
+  .report-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+    margin: 32px 0;
+  }
+  .report-card h4 {
+    margin: 0 0 6px;
+    font-size: 1.05em;
+  }
+  .report-card h4 a {
+    color: var(--gold-dark);
+    text-decoration: none;
+  }
+  .report-card h4 a:hover {
+    text-decoration: underline;
+  }
+  .report-card .read-more {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.85em;
+    color: var(--gold-dark);
+    text-decoration: none;
+  }
+  .report-card .read-more:hover {
+    text-decoration: underline;
+  }
+  .report-card .report-date {
+    color: var(--gray);
+    font-size: 0.85em;
+    margin-bottom: 16px;
+  }
+  .report-card .credit-list {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .report-card .credit-list .credit-label {
+    font-size: 0.8em;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+  .report-card .credit-list ul {
+    margin: 0;
+    padding-left: 1.2em;
+  }
   blockquote cite {
     display: block;
     margin-top: 10px;
@@ -241,15 +287,44 @@
   <p class="lead">Claude講習会からスタートし、回を重ねるごとに実績を記録・蓄積しています。</p>
   <div class="stats">
     <div class="stat"><div class="n">2+</div><div class="l">開催回数</div></div>
-    <div class="stat"><div class="n">6→</div><div class="l">初回参加人数</div></div>
+    <div class="stat"><div class="n">6→7</div><div class="l">回を追うごとの参加人数</div></div>
     <div class="stat"><div class="n">KO限定</div><div class="l">入会条件</div></div>
   </div>
   <blockquote>
     「個人の学びに留めず、相乗効果による非線形的なゲイン拡大を企図した設計」
     <cite>— 社会人の方からいただいた評価コメントより</cite>
   </blockquote>
+  <div class="report-card">
+    <h4><a href="reports/2026-07-15-workshop2.html">第2回 Claude講習会を開催</a></h4>
+    <div class="report-date">2026.07.15</div>
+    <p>
+      AIツール「Claude」の使い方を学ぶハンズオン形式の講習会を、参加者7名で実施。今回はMac・Windows両方の参加者に対応できるよう、講師を2名体制にして開催しました。
+    </p>
+    <a class="read-more" href="reports/2026-07-15-workshop2.html">続きを読む →</a>
+    <div class="credit-list">
+      <div class="credit-label">担当: 講師</div>
+      <ul>
+        <li>清本宗賢(代表) — 全体進行・Mac環境のサポート</li>
+        <li>坂本理樹(副代表) — Windows環境のサポート</li>
+      </ul>
+    </div>
+  </div>
+  <div class="report-card">
+    <h4><a href="reports/2026-07-15-sakamoto-game.html">プログラミング未経験の私が、AIで「思い出のゲーム」を少しだけ蘇らせた話</a></h4>
+    <div class="report-date">2026.07.15</div>
+    <p>
+      サービスを終了し遊べなくなっていたカードゲーム×ボードゲームのソーシャルゲームを、プログラミング未経験のメンバーがClaude Codeを使って個人で再現。制作期間は約2日間、コードはすべてAIが記述し、本人はゲームシステムの言語化・オリジナルカードの発案・動作確認のフィードバックに専念した。完成度は本家の3分の1程度ながら、CPU対戦まで動く形に仕上がった。元作品の権利に配慮し、公開は身近な友人・マイダスのメンバーへの提供にとどめている。
+    </p>
+    <a class="read-more" href="reports/2026-07-15-sakamoto-game.html">続きを読む →</a>
+    <div class="credit-list">
+      <div class="credit-label">担当: 個人プロジェクト</div>
+      <ul>
+        <li>坂本理樹(副代表) — 企画・言語化・テストプレイ・記事執筆</li>
+      </ul>
+    </div>
+  </div>
   <p style="margin-top:40px;">
-    今後は、各プロジェクトの実績を記事として公開し、担当したメンバーを記事内に明記していく予定です。個人の貢献がそのまま対外的に確認できる実績として積み上がっていく仕組みです。
+    今後も、各プロジェクトの実績を記事として公開し、担当したメンバーを記事内に明記していきます。個人の貢献がそのまま対外的に確認できる実績として積み上がっていく仕組みです。
   </p>
 </section>
 
