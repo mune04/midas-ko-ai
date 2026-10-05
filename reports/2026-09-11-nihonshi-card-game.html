@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高校3年生に、自作の日本史カードゲームで授業をしてきました | マイダス</title>
+<style>
+  :root {
+    --gold: #b8934a;
+    --gold-dark: #8f6f34;
+    --black: #1a1a1a;
+    --gray: #666;
+    --line: #e5e2da;
+    --bg: #fdfcfa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    color: var(--black);
+    background: var(--bg);
+    line-height: 1.9;
+  }
+  header {
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(253,252,250,0.95);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .logo { font-weight: 700; font-size: 1.3em; letter-spacing: 0.08em; text-decoration: none; color: var(--black); }
+  .logo span { color: var(--gold-dark); }
+  nav a { margin-left: 20px; text-decoration: none; color: var(--gray); font-size: 0.9em; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 70px 6% 100px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--gold-dark);
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  .article-date { color: var(--gray); font-size: 0.85em; margin-bottom: 6px; }
+  .article-author { color: var(--gray); font-size: 0.9em; margin-bottom: 28px; font-weight: 700; }
+  h1 { font-size: 1.7em; line-height: 1.5; margin: 0 0 8px; letter-spacing: 0.02em; }
+  h2 { font-size: 1.2em; color: var(--gold-dark); margin: 40px 0 12px; }
+  p { margin: 0 0 20px; }
+  .credit-box {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .credit-box .credit-label { font-size: 0.8em; color: var(--gray); margin-bottom: 8px; }
+  .credit-box ul { margin: 0; padding-left: 1.2em; }
+  footer { text-align: center; padding: 36px; color: var(--gray); font-size: 0.8em; }
+  .shot {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    display: block;
+    margin: 8px 0 6px;
+  }
+  .shot-caption {
+    color: var(--gray);
+    font-size: 0.82em;
+    margin: 0 0 28px;
+  }
+  .shot-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 8px 0 6px;
+  }
+  .shot-row img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    display: block;
+  }
+  @media (max-width: 560px) {
+    .shot-row { grid-template-columns: 1fr; }
+  }
+  .shot-row { margin-bottom: 28px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="../index.html">MIDAS<span>.</span></a>
+  <nav>
+    <a href="../index.html#results">実績一覧へ戻る</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back-link" href="../index.html#results">← 実績一覧へ戻る</a>
+  <div class="article-date">2026.09.11</div>
+  <h1>高校3年生に、自作の日本史カードゲームで授業をしてきました</h1>
+  <div class="article-author">マイダス副代表・坂本理樹</div>
+
+  <p>
+    9月11日、母校の公文国際学園で、高校3年生の日本史の授業を1コマもらって、自分で作ったカードゲームを遊んでもらいました。マイダスのメンバーでもある岩奥くんと2人で行ってきました。
+  </p>
+
+  <h2>どんなゲームか</h2>
+  <p>
+    作ったのは、出来事が書かれたカードを年代順に並べていくゲームです。表には「ペリー来航」のような出来事名だけ、裏に年号が書いてあります。手札の出来事が年表のどこに入るかを考えて差し込み、裏返して答え合わせ。正解すれば手札が減って、最初に手札をなくした人の勝ちです。
+  </p>
+
+  <img class="shot" src="../attachments/2026-09-11-nihonshi/02_cards_on_desk.jpg" alt="机の上に並べられた出来事カード。1868年から1884年までの出来事が年代順に並んでいる">
+  <p class="shot-caption">並んでいくのは年表そのもの。手札のカードがどこに入るかを考えて差し込み、裏返して答え合わせをする。</p>
+
+  <h2>作ろうと思った理由</h2>
+  <p>
+    理由は2つあります。1つは、自分の受験を振り返ったときに友達の存在が大きかったこと。一人で黙々とやった時間より、友達と一緒にやった時間の方が記憶に残っていました。もう1つは、高3の秋は勉強ばかりでしんどいので、息抜きになる時間を作りたかったことです。
+  </p>
+  <p>
+    カードの印刷デザインにはAI（Claude）を使いました。収録する出来事は、受験で問われるものを中心に自分で選んでいます。用意したのは明治セット63枚と、大正・昭和戦前セット54枚の2種類です。
+  </p>
+
+  <h2>当日の様子</h2>
+  <p>
+    当日は35人を8班に分けて、2種類のデッキで遊んでもらいました。正直、ちゃんと盛り上がるかずっと不安でした。でも始まってみると、「それ西南戦争より前じゃない？」と班の中で相談しながら置いていて、正解すると班全体で喜んでいる。競争のゲームなのに、自然と教え合いになっていたのが一番うれしかったです。
+  </p>
+
+  <div class="shot-row">
+    <div>
+      <img src="../attachments/2026-09-11-nihonshi/01_rule_explain.jpg" alt="班のテーブルでカードを手にルールを説明している様子">
+    </div>
+    <div>
+      <img src="../attachments/2026-09-11-nihonshi/03_whiteboard.jpg" alt="黒板の前で2人が進行している様子。黒板に「最初の手札 4→3枚に」と書かれている">
+    </div>
+  </div>
+
+  <p>
+    授業の後半10分は、受験期の経験談を話す時間にしました。
+  </p>
+
+  <h2>アンケートの結果</h2>
+  <p>
+    授業後のアンケートには25人が答えてくれて、「楽しかった」の5段階評価で23人が5、2人が4をつけてくれました。理解が深まったかについては「非常に」が13人、「ある程度」が12人です。
+  </p>
+  <p>
+    一番ほっとしたのは、日本史が苦手寄り（得意度1〜2）と答えた9人のうち、8人が「楽しかった」に5をつけてくれていたことでした。「自分の持っているカードの前後の時代も振り返りができてよかった」という声もありました。
+  </p>
+  <p>
+    一方で、「人物や事件のイラストがあるともっと覚えやすい」「チーム戦や協力要素があるともっと面白い」といった改善点ももらったので、次に活かしたいと思います。
+  </p>
+
+  <h2>学校のInstagramでも紹介してもらいました</h2>
+  <p>
+    後日、学校の公式Instagramでもこの授業の様子を紹介してもらいました。投稿の中で「競い合うだけでなく学び合う風景が自然とできていました」と書いてもらっていて、自分が一番うれしかったところを、先生方も同じように見てくれていたんだなと思いました。
+  </p>
+  <!-- TODO: 公文国際学園 公式Instagram の該当投稿URLが分かったら、上の「学校の公式Instagram」をリンクにする -->
+  <p>
+    授業のあと先生から「学校に置いておきたい」と言ってもらえたので、次は歴史総合版を作るつもりです。
+  </p>
+
+  <div class="credit-box">
+    <div class="credit-label">担当: 個人プロジェクト（出前授業）</div>
+    <ul>
+      <li>坂本理樹(副代表) — 教材の企画・制作・授業の実施・記事執筆</li>
+      <li>岩奥丈虎 — 授業の実施・当日運営</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  © 2026 マイダス(MIDAS) — KO×AI×就活
+</footer>
+
+</body>
+</html>
